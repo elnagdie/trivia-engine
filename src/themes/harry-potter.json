@@ -1,0 +1,127 @@
+{
+  "id": "harry-potter",
+  "name": "Harry Potter",
+  "description": "You're a wizard. Prove it.",
+  "icon": "⚡",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What house is Harry Potter sorted into at Hogwarts?",
+      "options": ["Slytherin", "Ravenclaw", "Gryffindor", "Hufflepuff"],
+      "correct": 2
+    },
+    {
+      "id": 2,
+      "type": "true-false",
+      "difficulty": "easy",
+      "question": "Hermione Granger is a Muggle-born witch.",
+      "correct": true
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What sport do wizards play on broomsticks?",
+      "options": ["Broom Racing", "Quidditch", "Wizardball", "Seeker"],
+      "correct": 1
+    },
+    {
+      "id": 4,
+      "type": "true-false",
+      "difficulty": "easy",
+      "question": "Voldemort's real name is Tom Riddle.",
+      "correct": true
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What is the name of Harry's owl?",
+      "options": ["Crookshanks", "Scabbers", "Hedwig", "Fawkes"],
+      "correct": 2
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What does the spell 'Expelliarmus' do?",
+      "options": ["Kills the target", "Disarms the opponent", "Creates a shield", "Summons an object"],
+      "correct": 1
+    },
+    {
+      "id": 7,
+      "type": "true-false",
+      "difficulty": "medium",
+      "question": "Sirius Black is Harry's godfather.",
+      "correct": true
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What is the name of the wizarding bank in Diagon Alley?",
+      "options": ["Gringotts", "Vaultmore", "Galleon Bank", "The Ministry Vault"],
+      "correct": 0
+    },
+    {
+      "id": 9,
+      "type": "true-false",
+      "difficulty": "medium",
+      "question": "Dumbledore was a Slytherin when he attended Hogwarts.",
+      "correct": false
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What creature is Hagrid's pet Norbert?",
+      "options": ["Hippogriff", "Norwegian Ridgeback dragon", "Basilisk", "Thestral"],
+      "correct": 1
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What are the three Deathly Hallows?",
+      "options": [
+        "Elder Wand, Resurrection Stone, Invisibility Cloak",
+        "Sorting Hat, Mirror of Erised, Philosopher's Stone",
+        "Horcrux, Patronus, Time-Turner",
+        "Elder Wand, Marauder's Map, Invisibility Cloak"
+      ],
+      "correct": 0
+    },
+    {
+      "id": 12,
+      "type": "true-false",
+      "difficulty": "hard",
+      "question": "Snape kills Dumbledore on Dumbledore's own request.",
+      "correct": true
+    },
+    {
+      "id": 13,
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What is the incantation for the Patronus charm?",
+      "options": ["Riddikulus", "Expecto Patronum", "Lumos Maxima", "Protego"],
+      "correct": 1
+    },
+    {
+      "id": 14,
+      "type": "true-false",
+      "difficulty": "hard",
+      "question": "Harry Potter is himself a Horcrux.",
+      "correct": true
+    },
+    {
+      "id": 15,
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "Who was the original owner of the Elder Wand before Dumbledore?",
+      "options": ["Grindelwald", "Voldemort", "Antioch Peverell", "Nicolas Flamel"],
+      "correct": 2
+    }
+  ]
+}

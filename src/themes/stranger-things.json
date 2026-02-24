@@ -1,0 +1,122 @@
+{
+  "id": "stranger-things",
+  "name": "Stranger Things",
+  "description": "Enter the Upside Down... if you dare.",
+  "icon": "🔦",
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What is the name of the alternate dimension in Stranger Things?",
+      "options": ["The Shadow Realm", "The Upside Down", "The Void", "The Dark Side"],
+      "correct": 1
+    },
+    {
+      "id": 2,
+      "type": "true-false",
+      "difficulty": "easy",
+      "question": "Eleven's real name is Jane Hopper.",
+      "correct": true
+    },
+    {
+      "id": 3,
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "What is the name of the town where Stranger Things is set?",
+      "options": ["Hawkins", "Springfield", "Riverdale", "Castle Rock"],
+      "correct": 0
+    },
+    {
+      "id": 4,
+      "type": "true-false",
+      "difficulty": "easy",
+      "question": "Mike Wheeler is Eleven's boyfriend.",
+      "correct": true
+    },
+    {
+      "id": 5,
+      "type": "multiple-choice",
+      "difficulty": "easy",
+      "question": "Which character was held captive in the Upside Down in Season 1?",
+      "options": ["Dustin", "Will Byers", "Mike", "Lucas"],
+      "correct": 1
+    },
+    {
+      "id": 6,
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What government lab conducted experiments on Eleven?",
+      "options": ["Hawkins National Laboratory", "Area 51", "Starcourt Labs", "The Vault"],
+      "correct": 0
+    },
+    {
+      "id": 7,
+      "type": "true-false",
+      "difficulty": "medium",
+      "question": "The Mind Flayer is the main villain in Season 1.",
+      "correct": false
+    },
+    {
+      "id": 8,
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What season does the character Max Mayfield first appear?",
+      "options": ["Season 1", "Season 2", "Season 3", "Season 4"],
+      "correct": 1
+    },
+    {
+      "id": 9,
+      "type": "true-false",
+      "difficulty": "medium",
+      "question": "Hopper fakes his death at the end of Season 3.",
+      "correct": false
+    },
+    {
+      "id": 10,
+      "type": "multiple-choice",
+      "difficulty": "medium",
+      "question": "What song does Max use to escape Vecna's curse?",
+      "options": ["Thriller", "Running Up That Hill", "Don't You Forget About Me", "Come On Eileen"],
+      "correct": 1
+    },
+    {
+      "id": 11,
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What is Eleven's original lab subject number?",
+      "options": ["Eight", "Eleven", "Twelve", "One"],
+      "correct": 1
+    },
+    {
+      "id": 12,
+      "type": "true-false",
+      "difficulty": "hard",
+      "question": "Henry Creel is also known as One and later Vecna.",
+      "correct": true
+    },
+    {
+      "id": 13,
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What is the name of the Soviet prison where Hopper is held in Season 4?",
+      "options": ["Kamchatka", "Siberia", "The Gulag", "Chernobyl"],
+      "correct": 0
+    },
+    {
+      "id": 14,
+      "type": "true-false",
+      "difficulty": "hard",
+      "question": "Eddie Munson survives the events of Season 4.",
+      "correct": false
+    },
+    {
+      "id": 15,
+      "type": "multiple-choice",
+      "difficulty": "hard",
+      "question": "What DnD creature name do the kids give to the villain in Season 1?",
+      "options": ["Beholder", "Demogorgon", "Lich", "Mindflayer"],
+      "correct": 1
+    }
+  ]
+}
