@@ -1,16 +1,58 @@
-# React + Vite
+# Trivia Engine
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A themed trivia game built with React. Pick your universe, choose your difficulty, and race against the clock to prove how much you really know.
 
-Currently, two official plugins are available:
+**Play now:** [trivia-engine.netlify.app](https://trivia-engine.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Themes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Stranger Things
+Enter the Upside Down — if you dare. Answer questions spanning all four seasons, from the Demogorgon to Vecna's curse.
 
-## Expanding the ESLint configuration
+### Harry Potter
+You're a wizard. Prove it. Test your knowledge of spells, Horcruxes, Hogwarts lore, and everything in between.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## How to Play
+
+1. **Pick a theme** — choose your universe
+2. **Choose a difficulty** — Easy, Medium, or Hard
+3. **Answer before time runs out** — each question has a countdown timer
+4. **See your results** — review every question and answer at the end
+5. **Play again or switch themes**
+
+---
+
+## Features
+
+- 150 questions per theme (50 per difficulty level)
+- Multiple choice and true/false question types
+- Per-question countdown timer
+- Full answer review on the score screen
+- Theme-specific visual styling — the UI transforms to match your chosen universe
+
+---
+
+## Tech Stack
+
+- React 19
+- Vite
+- Vitest (unit tests)
+
+---
+
+## Local Development
+
+```bash
+npm install
+npm run dev
+```
+
+Run tests:
+
+```bash
+npm test
+```
