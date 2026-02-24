@@ -1,21 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ── Full-page transformation ─────────────────────────── */
+
+body.theme-harry-potter {
+  background: #0f0a1e;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(120, 80, 20, 0.2) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(60, 20, 80, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 30%, rgba(80, 50, 10, 0.12) 0%, transparent 45%);
+}
+
+/* ── CSS variable overrides ───────────────────────────── */
+
 .theme-harry-potter {
+  --bg: #0f0a1e;
+  --surface: #1a1228;
+  --surface-2: #231930;
+  --text: #f0e8d0;
+  --text-muted: #8a7a5a;
   --accent: #c9a84c;
-  --bg: #1a1208;
-  --surface: #2a1f0e;
-  font-family: Georgia, serif;
+  --accent-fg: #1a0e05;
+  --correct: #4caf7a;
+  --wrong: #c0392b;
+  --border: #2e2240;
+  --shadow: 0 0 0 1px rgba(180,140,40,0.1), 0 4px 24px rgba(0,0,0,0.7);
+  --font: 'Lora', Georgia, serif;
+  --font-display: 'Cinzel', serif;
+}
+
+/* ── Keyframes ────────────────────────────────────────── */
+
+@keyframes hp-star-twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.4); }
+}
+
+@keyframes hp-gold-glow {
+  from { box-shadow: 0 0 8px rgba(200,160,60,0.15), 0 4px 24px rgba(0,0,0,0.7); }
+  to   { box-shadow: 0 0 16px rgba(200,160,60,0.25), 0 8px 32px rgba(0,0,0,0.8); }
+}
+
+@keyframes hp-shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Stars on body ────────────────────────────────────── */
+
+body.theme-harry-potter::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(255,220,120,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 8%, rgba(255,240,180,0.5) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 40% 22%, rgba(255,200,80,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 5%, rgba(255,230,150,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 18%, rgba(255,215,100,0.7) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 82% 10%, rgba(255,240,160,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 92% 25%, rgba(255,220,120,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 8% 45%, rgba(255,230,150,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 38%, rgba(255,200,80,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 42%, rgba(255,215,100,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 55%, rgba(255,230,150,0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 95% 48%, rgba(255,220,120,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 18% 65%, rgba(255,240,180,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 48% 72%, rgba(255,200,80,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 78%, rgba(255,215,100,0.5) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+  animation: hp-star-twinkle 4s ease-in-out infinite alternate;
+}
+
+body.theme-harry-potter::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 5% 90%, rgba(255,220,120,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 85%, rgba(255,240,180,0.4) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 52% 88%, rgba(255,200,80,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 82%, rgba(255,215,100,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 92%, rgba(255,230,150,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 30%, rgba(255,220,120,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 65% 62%, rgba(255,240,180,0.4) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+  animation: hp-star-twinkle 6s ease-in-out infinite alternate-reverse;
+}
+
+.theme-harry-potter {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Theme selector ───────────────────────────────────── */
+
+.theme-harry-potter .theme-selector h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 5.5vw, 3.8rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: #c9a84c;
+  text-shadow: 0 0 20px rgba(200,160,60,0.4), 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.theme-harry-potter .theme-selector > p {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  color: #8a7a5a;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.theme-harry-potter .theme-card {
+  background: #1a1228;
+  border-color: #2e2240;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-harry-potter .theme-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200,160,60,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.theme-harry-potter .theme-card:hover {
+  border-color: #c9a84c;
+  box-shadow: 0 0 20px rgba(200,160,60,0.15), 0 8px 32px rgba(0,0,0,0.8);
+  transform: translateY(-4px);
 }
 
 .theme-harry-potter .theme-card--harry-potter {
-  border-color: #c9a84c;
-  background: #2a1f0e;
+  border-color: #4a3820;
+  background: #1e1530;
 }
 
+.theme-harry-potter .theme-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  color: #c9a84c;
+}
+
+.theme-harry-potter .theme-desc {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.82rem;
+  color: #8a7a5a;
+}
+
+/* ── Difficulty selector ──────────────────────────────── */
+
+.theme-harry-potter .difficulty-selector h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+  color: #c9a84c;
+  text-shadow: 0 0 16px rgba(200,160,60,0.3);
+}
+
+.theme-harry-potter .difficulty-selector > p {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #8a7a5a;
+}
+
+.theme-harry-potter .back-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: #8a7a5a;
+}
+
+.theme-harry-potter .back-btn:hover { color: #c9a84c; }
+
+.theme-harry-potter .difficulty-card {
+  background: #1a1228;
+  border-color: #2e2240;
+}
+
+.theme-harry-potter .difficulty-card:hover {
+  border-color: #c9a84c;
+  box-shadow: 0 0 14px rgba(200,160,60,0.12);
+}
+
+.theme-harry-potter .difficulty-label {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: #c9a84c;
+}
+
+.theme-harry-potter .difficulty-desc {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-size: 0.75rem;
+  color: #8a7a5a;
+}
+
+/* ── Timer ────────────────────────────────────────────── */
+
+.theme-harry-potter .timer-bar {
+  background: #231930;
+  border: 1px solid #2e2240;
+}
+
+.theme-harry-potter .timer-fill {
+  background: linear-gradient(90deg, #8b6914, #c9a84c, #e8c96a);
+  box-shadow: 0 0 8px rgba(200,160,60,0.4);
+}
+
+.theme-harry-potter .timer--urgent .timer-fill {
+  background: #c0392b;
+  box-shadow: 0 0 10px rgba(192,57,43,0.5);
+}
+
+.theme-harry-potter .timer-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  color: #c9a84c;
+  letter-spacing: 0.04em;
+}
+
+/* ── Question card ────────────────────────────────────── */
+
 .theme-harry-potter .question-card {
-  border: 1px solid #c9a84c33;
-  box-shadow: 0 0 20px #c9a84c11;
+  background: #1a1228;
+  border-color: #3d2e50;
+  position: relative;
+  animation: hp-gold-glow 4s ease-in-out infinite alternate;
+}
+
+.theme-harry-potter .question-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(200,160,60,0.04) 0%, transparent 50%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.theme-harry-potter .question-meta {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: #6a5a3a;
+}
+
+.theme-harry-potter .question-text {
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f0e8d0;
+  line-height: 1.55;
+}
+
+.theme-harry-potter .option-btn {
+  background: #1e1530;
+  border-color: #2e2240;
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  color: #c8bca8;
+  transition: border-color 0.2s, box-shadow 0.2s, color 0.15s;
 }
 
 .theme-harry-potter .option-btn:hover {
   border-color: #c9a84c;
-  background: #3a2a10;
+  box-shadow: 0 0 12px rgba(200,160,60,0.12);
+  color: #f0e8d0;
+  background: #231930;
+  transform: none;
+}
+
+.theme-harry-potter .option-letter {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: #c9a84c;
+  text-shadow: 0 0 6px rgba(200,160,60,0.4);
+}
+
+/* ── Score screen ─────────────────────────────────────── */
+
+.theme-harry-potter .score-screen h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  letter-spacing: 0.08em;
+  color: #c9a84c;
+  text-shadow: 0 0 16px rgba(200,160,60,0.35);
+  font-weight: 700;
+}
+
+.theme-harry-potter .score-number {
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  color: #c9a84c;
+  text-shadow: 0 0 20px rgba(200,160,60,0.5);
+  line-height: 1;
+}
+
+.theme-harry-potter .score-screen h3 {
+  font-family: 'Cinzel', serif;
+  color: #6a5a3a;
+  letter-spacing: 0.1em;
+}
+
+.theme-harry-potter .answer-item {
+  background: #1a1228;
+  border-color: #2e2240;
+  font-family: 'Lora', serif;
+  font-size: 0.88rem;
+}
+
+.theme-harry-potter .answer-item--correct { border-left-color: #4caf7a; }
+.theme-harry-potter .answer-item--wrong { border-left-color: #c0392b; }
+.theme-harry-potter .answer-correction { font-style: italic; color: #8a7a5a; }
+
+.theme-harry-potter .btn--primary {
+  background: linear-gradient(135deg, #8b6914, #c9a84c);
+  color: #1a0e05;
+  font-family: 'Cinzel', serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  box-shadow: 0 0 14px rgba(200,160,60,0.25);
+}
+
+.theme-harry-potter .btn--primary:hover {
+  box-shadow: 0 0 22px rgba(200,160,60,0.4);
+  opacity: 1;
+  transform: none;
+}
+
+.theme-harry-potter .btn--secondary {
+  background: #1a1228;
+  border-color: #3d2e50;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: #8a7a5a;
+}
+
+.theme-harry-potter .btn--secondary:hover {
+  border-color: #c9a84c;
+  color: #c9a84c;
+  opacity: 1;
+  transform: none;
 }

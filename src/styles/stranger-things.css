@@ -1,21 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* ── Full-page transformation ─────────────────────────── */
+
+body.theme-stranger-things {
+  background: #080003;
+  background-image:
+    radial-gradient(ellipse at 15% 40%, rgba(160, 0, 0, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 70%, rgba(80, 0, 0, 0.12) 0%, transparent 50%);
+}
+
+/* ── CSS variable overrides ───────────────────────────── */
+
 .theme-stranger-things {
-  --accent: #e40000;
-  --bg: #050505;
-  --surface: #100000;
+  --bg: #080003;
+  --surface: #0e0005;
+  --surface-2: #180008;
+  --text: #ddd0c4;
+  --text-muted: #6b5a52;
+  --accent: #cc0000;
+  --accent-fg: #ffffff;
+  --correct: #00bb44;
+  --wrong: #cc0000;
+  --border: #2d0010;
+  --shadow: 0 0 0 1px rgba(180,0,0,0.15), 0 4px 24px rgba(0,0,0,0.9);
+  --font: 'Courier New', 'Lucida Console', monospace;
+  --font-display: 'VT323', monospace;
+}
+
+/* ── Keyframes ────────────────────────────────────────── */
+
+@keyframes st-flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0.7; }
+}
+
+@keyframes st-glow-pulse {
+  from { text-shadow: 0 0 8px #cc0000, 0 0 20px rgba(200,0,0,0.5); }
+  to   { text-shadow: 0 0 14px #ff0000, 0 0 35px rgba(200,0,0,0.7), 0 0 60px rgba(150,0,0,0.3); }
+}
+
+@keyframes st-border-pulse {
+  from { box-shadow: 0 0 8px rgba(200,0,0,0.2), inset 0 0 8px rgba(200,0,0,0.05); }
+  to   { box-shadow: 0 0 18px rgba(200,0,0,0.35), inset 0 0 12px rgba(200,0,0,0.08); }
+}
+
+@keyframes st-scan {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+/* ── Theme selector ───────────────────────────────────── */
+
+.theme-stranger-things .theme-selector h1 {
+  font-family: 'VT323', monospace;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  letter-spacing: 0.12em;
+  color: #cc0000;
+  animation: st-flicker 5s infinite, st-glow-pulse 2s ease-in-out infinite alternate;
+  font-weight: 400;
+}
+
+.theme-stranger-things .theme-selector > p {
+  color: #6b5a52;
   font-family: 'Courier New', monospace;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.theme-stranger-things .theme-card {
+  background: #0e0005;
+  border-color: #2d0010;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-stranger-things .theme-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(200,0,0,0.02) 2px,
+    rgba(200,0,0,0.02) 4px
+  );
+  pointer-events: none;
+}
+
+.theme-stranger-things .theme-card:hover {
+  border-color: #cc0000;
+  box-shadow: 0 0 20px rgba(200,0,0,0.25), 0 0 40px rgba(200,0,0,0.1);
+  transform: translateY(-3px);
 }
 
 .theme-stranger-things .theme-card--stranger-things {
-  border-color: #e40000;
-  background: #1a0000;
+  border-color: #5a0010;
+  background: #120006;
 }
 
+.theme-stranger-things .theme-name {
+  font-family: 'VT323', monospace;
+  font-size: 1.6rem;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  color: #cc0000;
+}
+
+.theme-stranger-things .theme-desc {
+  font-family: 'Courier New', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Difficulty selector ──────────────────────────────── */
+
+.theme-stranger-things .difficulty-selector h2 {
+  font-family: 'VT323', monospace;
+  font-size: 2.8rem;
+  letter-spacing: 0.1em;
+  color: #cc0000;
+  text-shadow: 0 0 10px rgba(200,0,0,0.6);
+  font-weight: 400;
+}
+
+.theme-stranger-things .difficulty-selector > p {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.theme-stranger-things .back-btn {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.theme-stranger-things .difficulty-card {
+  background: #0e0005;
+  border-color: #2d0010;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-stranger-things .difficulty-card:hover {
+  border-color: #cc0000;
+  box-shadow: 0 0 16px rgba(200,0,0,0.2);
+}
+
+.theme-stranger-things .difficulty-label {
+  font-family: 'VT323', monospace;
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  color: #cc0000;
+  font-weight: 400;
+}
+
+.theme-stranger-things .difficulty-desc {
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── Timer ────────────────────────────────────────────── */
+
+.theme-stranger-things .timer-bar {
+  background: #180008;
+  border: 1px solid #2d0010;
+}
+
+.theme-stranger-things .timer-fill {
+  background: #cc0000;
+  box-shadow: 0 0 8px rgba(200,0,0,0.6);
+}
+
+.theme-stranger-things .timer--urgent .timer-fill {
+  background: #ff2020;
+  box-shadow: 0 0 12px rgba(255,30,30,0.8);
+  animation: st-flicker 0.8s infinite;
+}
+
+.theme-stranger-things .timer-label {
+  font-family: 'VT323', monospace;
+  font-size: 1.2rem;
+  color: #cc0000;
+  text-shadow: 0 0 6px rgba(200,0,0,0.6);
+}
+
+/* ── Question card ────────────────────────────────────── */
+
 .theme-stranger-things .question-card {
-  border: 1px solid #e4000033;
-  box-shadow: 0 0 20px #e4000022;
+  background: #0e0005;
+  border-color: #3a0012;
+  position: relative;
+  overflow: hidden;
+  animation: st-border-pulse 3s ease-in-out infinite alternate;
+}
+
+.theme-stranger-things .question-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(200,0,0,0.015) 3px,
+    rgba(200,0,0,0.015) 6px
+  );
+  pointer-events: none;
+}
+
+.theme-stranger-things .question-meta {
+  font-family: 'Courier New', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: #6b5a52;
+}
+
+.theme-stranger-things .question-text {
+  font-family: 'Courier New', monospace;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #ddd0c4;
+  line-height: 1.6;
+}
+
+.theme-stranger-things .option-btn {
+  background: #120006;
+  border-color: #2d0010;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #c4b0a4;
+  transition: border-color 0.15s, box-shadow 0.15s, color 0.15s;
 }
 
 .theme-stranger-things .option-btn:hover {
-  border-color: #e40000;
-  box-shadow: 0 0 8px #e4000066;
+  border-color: #cc0000;
+  box-shadow: 0 0 12px rgba(200,0,0,0.2);
+  color: #ddd0c4;
+  background: #180008;
+  transform: none;
+}
+
+.theme-stranger-things .option-letter {
+  color: #cc0000;
+  text-shadow: 0 0 6px rgba(200,0,0,0.5);
+}
+
+/* ── Score screen ─────────────────────────────────────── */
+
+.theme-stranger-things .score-screen h2 {
+  font-family: 'VT323', monospace;
+  font-size: 3rem;
+  letter-spacing: 0.1em;
+  color: #cc0000;
+  text-shadow: 0 0 10px rgba(200,0,0,0.6);
+  font-weight: 400;
+}
+
+.theme-stranger-things .score-number {
+  font-family: 'VT323', monospace;
+  font-size: 5rem;
+  color: #cc0000;
+  text-shadow: 0 0 20px rgba(200,0,0,0.7);
+}
+
+.theme-stranger-things .score-screen h3 {
+  font-family: 'Courier New', monospace;
+  color: #6b5a52;
+}
+
+.theme-stranger-things .answer-item {
+  background: #0e0005;
+  border-color: #2d0010;
+  font-family: 'Courier New', monospace;
+}
+
+.theme-stranger-things .answer-item--correct { border-left-color: #00bb44; }
+.theme-stranger-things .answer-item--wrong { border-left-color: #cc0000; }
+
+.theme-stranger-things .btn--primary {
+  background: #cc0000;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  box-shadow: 0 0 16px rgba(200,0,0,0.3);
+}
+
+.theme-stranger-things .btn--primary:hover {
+  box-shadow: 0 0 24px rgba(200,0,0,0.5);
+  opacity: 1;
+  transform: none;
+}
+
+.theme-stranger-things .btn--secondary {
+  background: #120006;
+  border-color: #2d0010;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #8a7a74;
 }

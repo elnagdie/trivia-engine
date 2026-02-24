@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import useTrivia from './engine/useTrivia'
 import ThemeSelector from './components/ThemeSelector'
 import DifficultySelector from './components/DifficultySelector'
@@ -33,6 +33,11 @@ export default function App() {
   }
 
   const themeClass = selectedTheme ? `theme-${selectedTheme.id}` : ''
+
+  useEffect(() => {
+    document.body.className = themeClass
+    return () => { document.body.className = '' }
+  }, [themeClass])
 
   return (
     <div className={`app ${themeClass}`}>
