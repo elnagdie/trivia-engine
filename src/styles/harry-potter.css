@@ -1,0 +1,21 @@
+.theme-harry-potter {
+  --accent: #c9a84c;
+  --bg: #1a1208;
+  --surface: #2a1f0e;
+  font-family: Georgia, serif;
+}
+
+.theme-harry-potter .theme-card--harry-potter {
+  border-color: #c9a84c;
+  background: #2a1f0e;
+}
+
+.theme-harry-potter .question-card {
+  border: 1px solid #c9a84c33;
+  box-shadow: 0 0 20px #c9a84c11;
+}
+
+.theme-harry-potter .option-btn:hover {
+  border-color: #c9a84c;
+  background: #3a2a10;
+}

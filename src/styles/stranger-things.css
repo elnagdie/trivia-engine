@@ -1,0 +1,21 @@
+.theme-stranger-things {
+  --accent: #e40000;
+  --bg: #050505;
+  --surface: #100000;
+  font-family: 'Courier New', monospace;
+}
+
+.theme-stranger-things .theme-card--stranger-things {
+  border-color: #e40000;
+  background: #1a0000;
+}
+
+.theme-stranger-things .question-card {
+  border: 1px solid #e4000033;
+  box-shadow: 0 0 20px #e4000022;
+}
+
+.theme-stranger-things .option-btn:hover {
+  border-color: #e40000;
+  box-shadow: 0 0 8px #e4000066;
+}
