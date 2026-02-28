@@ -3,46 +3,94 @@
 /* ── Full-page transformation ─────────────────────────── */
 
 body.theme-friends {
-  background: #f0e6d8;
+  background: #1a0830;
   background-image:
-    radial-gradient(ellipse at 50% 0%, rgba(190, 140, 70, 0.22) 0%, transparent 60%),
-    radial-gradient(ellipse at 15% 85%, rgba(110, 55, 140, 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 88% 75%, rgba(110, 55, 140, 0.07) 0%, transparent 45%);
+    radial-gradient(ellipse at 25% 15%, rgba(220, 155, 50, 0.14) 0%, transparent 48%),
+    radial-gradient(ellipse at 80% 80%, rgba(220, 155, 50, 0.09) 0%, transparent 42%),
+    radial-gradient(ellipse at 50% 50%, rgba(90, 20, 130, 0.35) 0%, transparent 72%);
 }
 
 /* ── CSS variable overrides ───────────────────────────── */
 
 .theme-friends {
-  --bg: #f0e6d8;
-  --surface: #fdf7ef;
-  --surface-2: #ede0cc;
-  --text: #2c1a08;
-  --text-muted: #8a6540;
-  --accent: #7b4fa6;
-  --accent-fg: #ffffff;
-  --correct: #2e7d32;
-  --wrong: #c62828;
-  --border: #d8c4a8;
-  --shadow: 0 1px 3px rgba(100, 60, 20, 0.08), 0 4px 20px rgba(100, 60, 20, 0.1);
+  --bg: #1a0830;
+  --surface: #271040;
+  --surface-2: #331850;
+  --text: #f4e8d0;
+  --text-muted: #9070a8;
+  --accent: #e8a830;
+  --accent-fg: #1a0830;
+  --correct: #4aaf7a;
+  --wrong: #d44040;
+  --border: #4a2068;
+  --shadow: 0 0 0 1px rgba(220,155,50,0.08), 0 4px 24px rgba(0,0,0,0.6);
   --font: 'Nunito', 'Segoe UI', system-ui, sans-serif;
   --font-display: 'Playfair Display', Georgia, serif;
 }
 
+/* ── Static lamp-light motes ──────────────────────────── */
+
+body.theme-friends::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 20%, rgba(232,168,48,0.55) 0%, transparent 100%),
+    radial-gradient(1px 1px at 28% 8%,  rgba(244,200,96,0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 45% 30%, rgba(212,120,20,0.50) 0%, transparent 100%),
+    radial-gradient(2px 2px at 62% 12%, rgba(232,168,48,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 77% 25%, rgba(248,180,80,0.55) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 90% 18%, rgba(244,200,96,0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 6%  55%, rgba(232,168,48,0.30) 0%, transparent 100%),
+    radial-gradient(1px 1px at 38% 48%, rgba(212,120,20,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 58% 60%, rgba(248,180,80,0.40) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 85% 52%, rgba(232,168,48,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 75%, rgba(244,200,96,0.30) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 82%, rgba(212,120,20,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 72% 70%, rgba(248,180,80,0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 95% 85%, rgba(232,168,48,0.50) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+  animation: friends-mote-drift 5s ease-in-out infinite alternate;
+}
+
+body.theme-friends::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 8%  92%, rgba(244,200,96,0.40) 0%, transparent 100%),
+    radial-gradient(1px 1px at 33% 88%, rgba(232,168,48,0.35) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 55% 95%, rgba(248,180,80,0.50) 0%, transparent 100%),
+    radial-gradient(1px 1px at 78% 90%, rgba(212,120,20,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 93% 78%, rgba(244,200,96,0.45) 0%, transparent 100%),
+    radial-gradient(1px 1px at 18% 40%, rgba(232,168,48,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 68% 35%, rgba(248,180,80,0.30) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+  animation: friends-mote-drift 8s ease-in-out infinite alternate-reverse;
+}
+
+.theme-friends {
+  position: relative;
+  z-index: 1;
+}
+
 /* ── Keyframes ────────────────────────────────────────── */
 
-@keyframes friends-warm-pulse {
-  from { box-shadow: 0 1px 3px rgba(100,60,20,0.08), 0 4px 20px rgba(160,110,50,0.12); }
-  to   { box-shadow: 0 1px 3px rgba(100,60,20,0.1),  0 4px 28px rgba(160,110,50,0.22); }
+@keyframes friends-mote-drift {
+  0%   { opacity: 0.5; transform: translateY(0); }
+  100% { opacity: 1;   transform: translateY(-6px); }
 }
 
-@keyframes friends-title-shimmer {
-  from { text-shadow: 0 2px 12px rgba(123, 79, 166, 0.2); }
-  to   { text-shadow: 0 2px 24px rgba(123, 79, 166, 0.45), 0 0 40px rgba(180, 130, 60, 0.15); }
+@keyframes friends-lamp-glow {
+  from { box-shadow: 0 0 10px rgba(220,155,50,0.1), 0 4px 24px rgba(0,0,0,0.6); }
+  to   { box-shadow: 0 0 20px rgba(220,155,50,0.2), 0 8px 32px rgba(0,0,0,0.7); }
 }
 
-@keyframes friends-border-warm {
-  from { box-shadow: 0 0 10px rgba(160, 110, 50, 0.1), inset 0 0 8px rgba(160, 110, 50, 0.04); }
-  to   { box-shadow: 0 0 18px rgba(160, 110, 50, 0.2), inset 0 0 12px rgba(160, 110, 50, 0.07); }
+@keyframes friends-title-glow {
+  from { text-shadow: 0 2px 12px rgba(232,168,48,0.25), 0 0 40px rgba(90,20,130,0.2); }
+  to   { text-shadow: 0 2px 24px rgba(232,168,48,0.50), 0 0 60px rgba(90,20,130,0.3); }
 }
 
 /* ── Theme selector ───────────────────────────────────── */
@@ -50,48 +98,58 @@ body.theme-friends {
 .theme-friends .theme-selector h1 {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(3.5rem, 8vw, 5.5rem);
-  letter-spacing: 0.04em;
-  color: #5a2d82;
-  animation: friends-title-shimmer 3s ease-in-out infinite alternate;
+  letter-spacing: 0.05em;
+  color: #e8a830;
+  animation: friends-title-glow 3s ease-in-out infinite alternate;
   font-weight: 900;
 }
 
 .theme-friends .theme-selector > p {
-  color: #8a6540;
+  color: #9070a8;
   font-family: 'Nunito', sans-serif;
   letter-spacing: 0.06em;
   font-size: 0.9rem;
 }
 
 .theme-friends .theme-card {
-  background: #fdf7ef;
-  border-color: #d8c4a8;
+  background: #271040;
+  border-color: #4a2068;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-friends .theme-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(220,155,50,0.05) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 .theme-friends .theme-card:hover {
-  border-color: #7b4fa6;
-  box-shadow: 0 4px 24px rgba(123, 79, 166, 0.18), 0 1px 4px rgba(100, 60, 20, 0.1);
+  border-color: #e8a830;
+  box-shadow: 0 0 20px rgba(220,155,50,0.18), 0 8px 32px rgba(0,0,0,0.7);
   transform: translateY(-3px);
 }
 
 .theme-friends .theme-card--friends {
-  border-color: #b090d0;
-  background: #f8f0ff;
+  border-color: #7a3a90;
+  background: #2e1248;
 }
 
 .theme-friends .theme-name {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.5rem;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   font-weight: 700;
-  color: #5a2d82;
+  color: #e8a830;
 }
 
 .theme-friends .theme-desc {
   font-family: 'Nunito', sans-serif;
   font-size: 0.8rem;
   letter-spacing: 0.03em;
-  color: #8a6540;
+  color: #9070a8;
 }
 
 /* ── Difficulty selector ──────────────────────────────── */
@@ -100,15 +158,15 @@ body.theme-friends {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 2.6rem;
   letter-spacing: 0.04em;
-  color: #5a2d82;
-  text-shadow: 0 2px 12px rgba(123, 79, 166, 0.2);
+  color: #e8a830;
+  text-shadow: 0 2px 12px rgba(232,168,48,0.3);
   font-weight: 700;
 }
 
 .theme-friends .difficulty-selector > p {
   font-family: 'Nunito', sans-serif;
   font-size: 0.85rem;
-  color: #8a6540;
+  color: #9070a8;
   letter-spacing: 0.04em;
 }
 
@@ -116,71 +174,84 @@ body.theme-friends {
   font-family: 'Nunito', sans-serif;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
-  color: #8a6540;
+  color: #9070a8;
 }
 
+.theme-friends .back-btn:hover { color: #e8a830; }
+
 .theme-friends .difficulty-card {
-  background: #fdf7ef;
-  border-color: #d8c4a8;
-  animation: friends-warm-pulse 4s ease-in-out infinite alternate;
+  background: #271040;
+  border-color: #4a2068;
+  animation: friends-lamp-glow 4s ease-in-out infinite alternate;
 }
 
 .theme-friends .difficulty-card:hover {
-  border-color: #7b4fa6;
-  box-shadow: 0 4px 20px rgba(123, 79, 166, 0.15);
+  border-color: #e8a830;
+  box-shadow: 0 0 16px rgba(220,155,50,0.15);
 }
 
 .theme-friends .difficulty-label {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.45rem;
   letter-spacing: 0.03em;
-  color: #5a2d82;
+  color: #e8a830;
   font-weight: 700;
 }
 
 .theme-friends .difficulty-desc {
   font-family: 'Nunito', sans-serif;
   font-size: 0.75rem;
-  color: #8a6540;
+  color: #9070a8;
   letter-spacing: 0.03em;
 }
 
 /* ── Timer ────────────────────────────────────────────── */
 
 .theme-friends .timer-bar {
-  background: #ede0cc;
-  border: 1px solid #d8c4a8;
+  background: #331850;
+  border: 1px solid #4a2068;
 }
 
 .theme-friends .timer-fill {
-  background: #7b4fa6;
-  box-shadow: 0 0 8px rgba(123, 79, 166, 0.4);
+  background: linear-gradient(90deg, #a06010, #e8a830, #f4c860);
+  box-shadow: 0 0 8px rgba(220,155,50,0.4);
 }
 
 .theme-friends .timer--urgent .timer-fill {
-  background: #c62828;
-  box-shadow: 0 0 12px rgba(198, 40, 40, 0.5);
+  background: #d44040;
+  box-shadow: 0 0 12px rgba(212,64,64,0.5);
 }
 
 .theme-friends .timer-label {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.1rem;
-  color: #5a2d82;
+  color: #e8a830;
+  text-shadow: 0 0 8px rgba(232,168,48,0.4);
 }
 
 /* ── Question card ────────────────────────────────────── */
 
 .theme-friends .question-card {
-  background: #fdf7ef;
-  border-color: #cbb898;
-  animation: friends-border-warm 4s ease-in-out infinite alternate;
+  background: #271040;
+  border-color: #5a2878;
+  position: relative;
+  animation: friends-lamp-glow 4s ease-in-out infinite alternate;
+}
+
+.theme-friends .question-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(220,155,50,0.05) 0%, transparent 55%);
+  border-radius: inherit;
+  pointer-events: none;
 }
 
 .theme-friends .question-meta {
   font-family: 'Nunito', sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.1em;
-  color: #a07848;
+  color: #7050a0;
   text-transform: uppercase;
 }
 
@@ -188,29 +259,30 @@ body.theme-friends {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.15rem;
   font-weight: 400;
-  color: #2c1a08;
+  color: #f4e8d0;
   line-height: 1.65;
 }
 
 .theme-friends .option-btn {
-  background: #faf2e8;
-  border-color: #d8c4a8;
+  background: #2e1248;
+  border-color: #4a2068;
   font-family: 'Nunito', sans-serif;
   font-size: 0.9rem;
-  color: #4a2e10;
-  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+  color: #c8aee8;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s, color 0.15s;
 }
 
 .theme-friends .option-btn:hover {
-  border-color: #7b4fa6;
-  box-shadow: 0 2px 12px rgba(123, 79, 166, 0.15);
-  background: #f5ecff;
-  color: #3a1a60;
+  border-color: #e8a830;
+  box-shadow: 0 2px 14px rgba(220,155,50,0.18);
+  background: #3a1858;
+  color: #f4e8d0;
 }
 
 .theme-friends .option-letter {
-  color: #7b4fa6;
+  color: #e8a830;
   font-weight: 700;
+  text-shadow: 0 0 6px rgba(232,168,48,0.4);
 }
 
 /* ── Score screen ─────────────────────────────────────── */
@@ -219,52 +291,58 @@ body.theme-friends {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 2.8rem;
   letter-spacing: 0.04em;
-  color: #5a2d82;
-  text-shadow: 0 2px 12px rgba(123, 79, 166, 0.2);
+  color: #e8a830;
+  text-shadow: 0 2px 16px rgba(232,168,48,0.35);
   font-weight: 700;
 }
 
 .theme-friends .score-number {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 5rem;
-  color: #5a2d82;
-  text-shadow: 0 4px 20px rgba(123, 79, 166, 0.3);
+  color: #e8a830;
+  text-shadow: 0 4px 24px rgba(232,168,48,0.45);
   font-weight: 900;
 }
 
 .theme-friends .score-screen h3 {
   font-family: 'Nunito', sans-serif;
-  color: #8a6540;
+  color: #9070a8;
 }
 
 .theme-friends .answer-item {
-  background: #fdf7ef;
-  border-color: #d8c4a8;
+  background: #271040;
+  border-color: #4a2068;
   font-family: 'Nunito', sans-serif;
 }
 
-.theme-friends .answer-item--correct { border-left-color: #2e7d32; }
-.theme-friends .answer-item--wrong   { border-left-color: #c62828; }
+.theme-friends .answer-item--correct { border-left-color: #4aaf7a; }
+.theme-friends .answer-item--wrong   { border-left-color: #d44040; }
 
 .theme-friends .btn--primary {
-  background: #7b4fa6;
+  background: linear-gradient(135deg, #a06010, #e8a830);
+  color: #1a0830;
   font-family: 'Nunito', sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.04em;
-  box-shadow: 0 4px 16px rgba(123, 79, 166, 0.3);
+  box-shadow: 0 4px 16px rgba(220,155,50,0.3);
 }
 
 .theme-friends .btn--primary:hover {
-  box-shadow: 0 6px 24px rgba(123, 79, 166, 0.45);
+  box-shadow: 0 6px 24px rgba(220,155,50,0.5);
   opacity: 1;
-  background: #6a3d94;
 }
 
 .theme-friends .btn--secondary {
-  background: #fdf7ef;
-  border-color: #d8c4a8;
+  background: #271040;
+  border-color: #4a2068;
   font-family: 'Nunito', sans-serif;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: #8a6540;
+  color: #9070a8;
+}
+
+.theme-friends .btn--secondary:hover {
+  border-color: #e8a830;
+  color: #e8a830;
+  opacity: 1;
 }

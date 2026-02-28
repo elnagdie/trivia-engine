@@ -5,6 +5,7 @@ import DifficultySelector from './components/DifficultySelector'
 import Timer from './components/Timer'
 import QuestionCard from './components/QuestionCard'
 import ScoreScreen from './components/ScoreScreen'
+import FriendsParticles from './components/FriendsParticles'
 
 export default function App() {
   const [selectedTheme, setSelectedTheme] = useState(null)
@@ -41,6 +42,7 @@ export default function App() {
 
   return (
     <div className={`app ${themeClass}`}>
+      {selectedTheme?.id === 'friends' && <FriendsParticles />}
       {trivia.phase === 'idle' && !selectedTheme && (
         <ThemeSelector onSelect={handleThemeSelect} />
       )}
