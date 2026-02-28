@@ -28,60 +28,12 @@ body.theme-friends {
   --font-display: 'Playfair Display', Georgia, serif;
 }
 
-/* ── Static lamp-light motes ──────────────────────────── */
-
-body.theme-friends::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image:
-    radial-gradient(1.5px 1.5px at 12% 20%, rgba(232,168,48,0.55) 0%, transparent 100%),
-    radial-gradient(1px 1px at 28% 8%,  rgba(244,200,96,0.40) 0%, transparent 100%),
-    radial-gradient(1px 1px at 45% 30%, rgba(212,120,20,0.50) 0%, transparent 100%),
-    radial-gradient(2px 2px at 62% 12%, rgba(232,168,48,0.35) 0%, transparent 100%),
-    radial-gradient(1px 1px at 77% 25%, rgba(248,180,80,0.55) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 90% 18%, rgba(244,200,96,0.40) 0%, transparent 100%),
-    radial-gradient(1px 1px at 6%  55%, rgba(232,168,48,0.30) 0%, transparent 100%),
-    radial-gradient(1px 1px at 38% 48%, rgba(212,120,20,0.35) 0%, transparent 100%),
-    radial-gradient(1px 1px at 58% 60%, rgba(248,180,80,0.40) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 85% 52%, rgba(232,168,48,0.45) 0%, transparent 100%),
-    radial-gradient(1px 1px at 20% 75%, rgba(244,200,96,0.30) 0%, transparent 100%),
-    radial-gradient(1px 1px at 50% 82%, rgba(212,120,20,0.35) 0%, transparent 100%),
-    radial-gradient(1px 1px at 72% 70%, rgba(248,180,80,0.40) 0%, transparent 100%),
-    radial-gradient(1px 1px at 95% 85%, rgba(232,168,48,0.50) 0%, transparent 100%);
-  pointer-events: none;
-  z-index: 0;
-  animation: friends-mote-drift 5s ease-in-out infinite alternate;
-}
-
-body.theme-friends::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image:
-    radial-gradient(1px 1px at 8%  92%, rgba(244,200,96,0.40) 0%, transparent 100%),
-    radial-gradient(1px 1px at 33% 88%, rgba(232,168,48,0.35) 0%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 55% 95%, rgba(248,180,80,0.50) 0%, transparent 100%),
-    radial-gradient(1px 1px at 78% 90%, rgba(212,120,20,0.35) 0%, transparent 100%),
-    radial-gradient(1px 1px at 93% 78%, rgba(244,200,96,0.45) 0%, transparent 100%),
-    radial-gradient(1px 1px at 18% 40%, rgba(232,168,48,0.25) 0%, transparent 100%),
-    radial-gradient(1px 1px at 68% 35%, rgba(248,180,80,0.30) 0%, transparent 100%);
-  pointer-events: none;
-  z-index: 0;
-  animation: friends-mote-drift 8s ease-in-out infinite alternate-reverse;
-}
-
 .theme-friends {
   position: relative;
   z-index: 1;
 }
 
 /* ── Keyframes ────────────────────────────────────────── */
-
-@keyframes friends-mote-drift {
-  0%   { opacity: 0.5; transform: translateY(0); }
-  100% { opacity: 1;   transform: translateY(-6px); }
-}
 
 @keyframes friends-lamp-glow {
   from { box-shadow: 0 0 10px rgba(220,155,50,0.1), 0 4px 24px rgba(0,0,0,0.6); }
