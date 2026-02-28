@@ -1,7 +1,8 @@
 import strangerThings from '../themes/stranger-things.json'
 import harryPotter from '../themes/harry-potter.json'
+import friends from '../themes/friends.json'
 
-const THEMES = [strangerThings, harryPotter]
+const THEMES = [strangerThings, harryPotter, friends]
 
 export default function ThemeSelector({ onSelect }) {
   return (

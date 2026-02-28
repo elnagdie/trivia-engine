@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Nunito:wght@400;500;600&display=swap');
+
+/* ── Full-page transformation ─────────────────────────── */
+
+body.theme-friends {
+  background: #f0e6d8;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(190, 140, 70, 0.22) 0%, transparent 60%),
+    radial-gradient(ellipse at 15% 85%, rgba(110, 55, 140, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 88% 75%, rgba(110, 55, 140, 0.07) 0%, transparent 45%);
+}
+
+/* ── CSS variable overrides ───────────────────────────── */
+
+.theme-friends {
+  --bg: #f0e6d8;
+  --surface: #fdf7ef;
+  --surface-2: #ede0cc;
+  --text: #2c1a08;
+  --text-muted: #8a6540;
+  --accent: #7b4fa6;
+  --accent-fg: #ffffff;
+  --correct: #2e7d32;
+  --wrong: #c62828;
+  --border: #d8c4a8;
+  --shadow: 0 1px 3px rgba(100, 60, 20, 0.08), 0 4px 20px rgba(100, 60, 20, 0.1);
+  --font: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+}
+
+/* ── Keyframes ────────────────────────────────────────── */
+
+@keyframes friends-warm-pulse {
+  from { box-shadow: 0 1px 3px rgba(100,60,20,0.08), 0 4px 20px rgba(160,110,50,0.12); }
+  to   { box-shadow: 0 1px 3px rgba(100,60,20,0.1),  0 4px 28px rgba(160,110,50,0.22); }
+}
+
+@keyframes friends-title-shimmer {
+  from { text-shadow: 0 2px 12px rgba(123, 79, 166, 0.2); }
+  to   { text-shadow: 0 2px 24px rgba(123, 79, 166, 0.45), 0 0 40px rgba(180, 130, 60, 0.15); }
+}
+
+@keyframes friends-border-warm {
+  from { box-shadow: 0 0 10px rgba(160, 110, 50, 0.1), inset 0 0 8px rgba(160, 110, 50, 0.04); }
+  to   { box-shadow: 0 0 18px rgba(160, 110, 50, 0.2), inset 0 0 12px rgba(160, 110, 50, 0.07); }
+}
+
+/* ── Theme selector ───────────────────────────────────── */
+
+.theme-friends .theme-selector h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(3.5rem, 8vw, 5.5rem);
+  letter-spacing: 0.04em;
+  color: #5a2d82;
+  animation: friends-title-shimmer 3s ease-in-out infinite alternate;
+  font-weight: 900;
+}
+
+.theme-friends .theme-selector > p {
+  color: #8a6540;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: 0.06em;
+  font-size: 0.9rem;
+}
+
+.theme-friends .theme-card {
+  background: #fdf7ef;
+  border-color: #d8c4a8;
+}
+
+.theme-friends .theme-card:hover {
+  border-color: #7b4fa6;
+  box-shadow: 0 4px 24px rgba(123, 79, 166, 0.18), 0 1px 4px rgba(100, 60, 20, 0.1);
+  transform: translateY(-3px);
+}
+
+.theme-friends .theme-card--friends {
+  border-color: #b090d0;
+  background: #f8f0ff;
+}
+
+.theme-friends .theme-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  color: #5a2d82;
+}
+
+.theme-friends .theme-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  color: #8a6540;
+}
+
+/* ── Difficulty selector ──────────────────────────────── */
+
+.theme-friends .difficulty-selector h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.04em;
+  color: #5a2d82;
+  text-shadow: 0 2px 12px rgba(123, 79, 166, 0.2);
+  font-weight: 700;
+}
+
+.theme-friends .difficulty-selector > p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  color: #8a6540;
+  letter-spacing: 0.04em;
+}
+
+.theme-friends .back-btn {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: #8a6540;
+}
+
+.theme-friends .difficulty-card {
+  background: #fdf7ef;
+  border-color: #d8c4a8;
+  animation: friends-warm-pulse 4s ease-in-out infinite alternate;
+}
+
+.theme-friends .difficulty-card:hover {
+  border-color: #7b4fa6;
+  box-shadow: 0 4px 20px rgba(123, 79, 166, 0.15);
+}
+
+.theme-friends .difficulty-label {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+  letter-spacing: 0.03em;
+  color: #5a2d82;
+  font-weight: 700;
+}
+
+.theme-friends .difficulty-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  color: #8a6540;
+  letter-spacing: 0.03em;
+}
+
+/* ── Timer ────────────────────────────────────────────── */
+
+.theme-friends .timer-bar {
+  background: #ede0cc;
+  border: 1px solid #d8c4a8;
+}
+
+.theme-friends .timer-fill {
+  background: #7b4fa6;
+  box-shadow: 0 0 8px rgba(123, 79, 166, 0.4);
+}
+
+.theme-friends .timer--urgent .timer-fill {
+  background: #c62828;
+  box-shadow: 0 0 12px rgba(198, 40, 40, 0.5);
+}
+
+.theme-friends .timer-label {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  color: #5a2d82;
+}
+
+/* ── Question card ────────────────────────────────────── */
+
+.theme-friends .question-card {
+  background: #fdf7ef;
+  border-color: #cbb898;
+  animation: friends-border-warm 4s ease-in-out infinite alternate;
+}
+
+.theme-friends .question-meta {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: #a07848;
+  text-transform: uppercase;
+}
+
+.theme-friends .question-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #2c1a08;
+  line-height: 1.65;
+}
+
+.theme-friends .option-btn {
+  background: #faf2e8;
+  border-color: #d8c4a8;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  color: #4a2e10;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.theme-friends .option-btn:hover {
+  border-color: #7b4fa6;
+  box-shadow: 0 2px 12px rgba(123, 79, 166, 0.15);
+  background: #f5ecff;
+  color: #3a1a60;
+}
+
+.theme-friends .option-letter {
+  color: #7b4fa6;
+  font-weight: 700;
+}
+
+/* ── Score screen ─────────────────────────────────────── */
+
+.theme-friends .score-screen h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.8rem;
+  letter-spacing: 0.04em;
+  color: #5a2d82;
+  text-shadow: 0 2px 12px rgba(123, 79, 166, 0.2);
+  font-weight: 700;
+}
+
+.theme-friends .score-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 5rem;
+  color: #5a2d82;
+  text-shadow: 0 4px 20px rgba(123, 79, 166, 0.3);
+  font-weight: 900;
+}
+
+.theme-friends .score-screen h3 {
+  font-family: 'Nunito', sans-serif;
+  color: #8a6540;
+}
+
+.theme-friends .answer-item {
+  background: #fdf7ef;
+  border-color: #d8c4a8;
+  font-family: 'Nunito', sans-serif;
+}
+
+.theme-friends .answer-item--correct { border-left-color: #2e7d32; }
+.theme-friends .answer-item--wrong   { border-left-color: #c62828; }
+
+.theme-friends .btn--primary {
+  background: #7b4fa6;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 16px rgba(123, 79, 166, 0.3);
+}
+
+.theme-friends .btn--primary:hover {
+  box-shadow: 0 6px 24px rgba(123, 79, 166, 0.45);
+  opacity: 1;
+  background: #6a3d94;
+}
+
+.theme-friends .btn--secondary {
+  background: #fdf7ef;
+  border-color: #d8c4a8;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #8a6540;
+}
